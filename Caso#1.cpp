@@ -9,12 +9,14 @@ struct region {
     int adyacentes[];
 	};
 	
-	int cant;
+int cant;
+int cantAdy;
+
 int verificarTeorema(region lasRegiones[]){
 	bool cumple=true;
 	cout<<"\nVerificar el teorema ""Four Color"""<<endl;
     for(int indexReg=0;indexReg<cant; indexReg++){
-    	for(int indexRegAdy=0; indexRegAdy<cant-1; indexRegAdy++){
+    	for(int indexRegAdy=0; indexRegAdy<cantAdy; indexRegAdy++){
     		if(lasRegiones[indexReg].color==lasRegiones[lasRegiones[indexReg].adyacentes[indexRegAdy]-1].color){ //Verifica que el color de la region en ese momento sea diferente al color de sus adyacentes
     			cumple=false;
     		}
@@ -28,8 +30,6 @@ int verificarTeorema(region lasRegiones[]){
 }
 int main(){
 	
-	
-	int cantAdy;
 	region lasRegiones[cant];
 	int arr[cantAdy];
 	cout<<"Indique la cantidad de regiones que quiere agregar: ";

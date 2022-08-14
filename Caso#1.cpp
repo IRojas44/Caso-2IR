@@ -14,7 +14,7 @@ int verificarTeorema(region lasRegiones[]){
 	bool cumple=true;
 	cout<<"\nVerificar el teorema ""Four Color"""<<endl;
     for(int indexReg=0;indexReg<cant; indexReg++){
-    	for(int indexRegAdy=0; indexRegAdy<cant; indexRegAdy++){
+    	for(int indexRegAdy=0; indexRegAdy<cant-1; indexRegAdy++){
     		if(lasRegiones[indexReg].color==lasRegiones[lasRegiones[indexReg].adyacentes[indexRegAdy]-1].color){ //Verifica que el color de la region en ese momento sea diferente al color de sus adyacentes
     			cumple=false;
     		}
@@ -49,14 +49,6 @@ int main(){
 				cin>>lasRegiones[index].adyacentes[indexAdy];
 		}
 	}
-	/*
-	region lasRegiones={	
-	0 {1,4,{2,4}},
-	1 {2,2,{1,3}},
-	2 {3,1,{2,4}},
-	3 {4,3,{2,3}}
-	}
-	*/
 	verificarTeorema(lasRegiones);
     
     return 0;
